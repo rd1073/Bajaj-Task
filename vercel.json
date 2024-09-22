@@ -1,10 +1,23 @@
 {
     "version": 2,
     "builds": [
-      { "src": "./app.js", "use": "@vercel/node" }
+      {
+        "src": "api/bfhl.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "app.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/" }
-    ]
+      {
+        "src": "/api/bfhl",
+        "dest": "/api/bfhl.js"
+      }
+    ],
+    "env": {
+      "YOUR_ENV_VARIABLE": "your_value"
+    }
   }
   
